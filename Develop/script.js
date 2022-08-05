@@ -169,6 +169,15 @@ function generatePassword() {
   // for loop
   for (i = 0; i < desLength; i++) {
     // math.Random() to generate array items for password?
+    finalPwd.push(charSample.push[math.Floor(math.Random() * desLength)]);
+    console.log("Password: " + finalPwd);
     // copy item to finalPwd array
   }
+
+  for (var j = 0; j < charSample.length; j++) {
+    // Copy the item in index location j from charSample into finalPwd in index location j.
+    finalPwd[j] = charSample[j];
+  }
+
+  return finalPwd.join("");
 }
