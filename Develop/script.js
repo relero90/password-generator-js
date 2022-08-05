@@ -58,8 +58,8 @@ var lowerCase = [
   "y",
   "z",
 ];
-var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specChars = [
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specChar = [
   "!",
   "#",
   "$",
@@ -112,9 +112,63 @@ function generatePassword() {
     generatePassword();
   }
 
-  // Declares boolean variables for the use of each type of character and asks the user to confirm true or false.
+  // Declares local boolean variables for the use of each type of character and asks the user to confirm true or false.
   var ucUse = confirm("Should your password contain uppercase letters?");
   var lcUse = confirm("Should your password contain lowercase letters?");
   var numUse = confirm("Should your password contain numbers?");
   var scUse = confirm("Should your password contain special characters?");
+  // If user selected false for all character types, prompt them to select at least one and recall the function.
+  if (ucUse == false && lcUse == false && numUse == false && scUse == false) {
+    prompt("You must select at least one character type for your password.");
+    generatePassword();
+  }
+
+  // Sample array to contain one random value from each selected characterUse array.
+  var charSample = [];
+  // Bank array to contain the bank of all possible characters to be used in password generation.
+  var charBank = [];
+  // Final array to contain generated password for user.
+  var finalPwd = [;]
+
+  // If user selected to use uppercase letters...
+  if (ucUse == true) {
+    // Select a random value from upperCase array and add it to charSample array
+    charSample.push(math.Floor(math.Random() * upperCase.length));
+    console.log(charSample)
+    // Copy entire upperCase array into charBank array
+    charBank = charBank.concat(upperCase);
+  }
+  
+  // If user selected to use lowercase letters...
+  if (lcUse == true) {
+    // Select a random value from lowerCase array and add it to charSample array
+    charSample.push(math.Floor(math.Random() * lowerCase.length));
+    console.log(charSample)
+    // Copy entire lowerCase array into charBank array
+    charBank = charBank.concat(lowerCase);
+  }
+  
+  // If user selected to use numbers...
+  if (numUse == true) {
+    // Select a random value from number array and add it to charSample array
+    charSample.push(math.Floor(math.Random() * number.length));
+    console.log(charSample)
+    // Copy entire number array into charBank array
+    charBank = charBank.concat(number);
+  }
+  
+  // If user selected to use special characters...
+  if (scUse == true) {
+    // Select a random value from specChar array and add it to charSample array
+    charSample.push(math.Floor(math.Random() * specChar.length));
+    console.log(charSample)
+    // Copy entire specChar array into charBank array
+    charBank = charBank.concat(specChar);
+  }
+
+  // for loop
+  for (i = 0; i < desLength; i++) {
+    // math.Random() to generate array items for password?
+    // copy item to finalPwd array
+  }
 }
