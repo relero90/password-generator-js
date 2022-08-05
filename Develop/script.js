@@ -128,40 +128,40 @@ function generatePassword() {
   // Bank array to contain the bank of all possible characters to be used in password generation.
   var charBank = [];
   // Final array to contain generated password for user.
-  var finalPwd = [;]
+  var finalPwd = [];
 
   // If user selected to use uppercase letters...
   if (ucUse == true) {
     // Select a random value from upperCase array and add it to charSample array
     charSample.push(math.Floor(math.Random() * upperCase.length));
-    console.log(charSample)
+    console.log(charSample);
     // Copy entire upperCase array into charBank array
     charBank = charBank.concat(upperCase);
   }
-  
+
   // If user selected to use lowercase letters...
   if (lcUse == true) {
     // Select a random value from lowerCase array and add it to charSample array
     charSample.push(math.Floor(math.Random() * lowerCase.length));
-    console.log(charSample)
+    console.log(charSample);
     // Copy entire lowerCase array into charBank array
     charBank = charBank.concat(lowerCase);
   }
-  
+
   // If user selected to use numbers...
   if (numUse == true) {
     // Select a random value from number array and add it to charSample array
     charSample.push(math.Floor(math.Random() * number.length));
-    console.log(charSample)
+    console.log(charSample);
     // Copy entire number array into charBank array
     charBank = charBank.concat(number);
   }
-  
+
   // If user selected to use special characters...
   if (scUse == true) {
     // Select a random value from specChar array and add it to charSample array
     charSample.push(math.Floor(math.Random() * specChar.length));
-    console.log(charSample)
+    console.log(charSample);
     // Copy entire specChar array into charBank array
     charBank = charBank.concat(specChar);
   }
