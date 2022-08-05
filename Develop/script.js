@@ -108,7 +108,7 @@ function generatePassword() {
       "(8-128 accepted)"
   );
 
-  // If desLength is outside of 8-128 character range, prompt user and return to beginning of generatePassword() function.
+  // If desLength is outside of 8-128 character range, alert user and return to beginning of generatePassword() function.
   if (desLength < 8 || desLength > 128) {
     alert("Your password must be between 8 and 128 characters long.");
     generatePassword();
@@ -119,7 +119,7 @@ function generatePassword() {
   var lcUse = confirm("Should your password contain lowercase letters?");
   var numUse = confirm("Should your password contain numbers?");
   var scUse = confirm("Should your password contain special characters?");
-  // If user selected false for all character types, prompt them to select at least one and recall the function from the beginning.
+  // If user selected false for all character types, alert them to select at least one and recall the function from the beginning.
   if (ucUse == false && lcUse == false && numUse == false && scUse == false) {
     alert("You must select at least one character type for your password.");
     generatePassword();
