@@ -166,19 +166,21 @@ function generatePassword() {
     charBank = charBank.concat(specChar);
   }
 
-  // for loop
+  // "for loop" - i starts at 0. If the condition (i < desLength) is true, run the code block. Add 1 to the current value of i and return to the condition.
+  // Repeats the function of adding one random item from charBank to finalPwd until you reach the desLength the user selected.
   for (i = 0; i < desLength; i++) {
-    // math.Random() to generate array items for password?
-    finalPwd.push(charSample[Math.floor(Math.random() * charSample.length)]);
+    finalPwd.push(charBank[Math.floor(Math.random() * charBank.length)]);
     console.log("Password: " + finalPwd);
-    // copy item to finalPwd array
   }
 
+  // "for loop" - if j is less than the length of the sampleChar array, run the code block. Add 1 to j and repeat.
+  // Ensures that the final pwd returned to the user uses at least one of each character type by replacing the first item(s) in finalPwd with sampleChar.
   for (var j = 0; j < charSample.length; j++) {
     // Copy the item in index location j from charSample into finalPwd in index location j.
     finalPwd[j] = charSample[j];
     console.log(finalPwd);
   }
 
+  // Join all of the items of the finalPwd array into a string and return it back to the parent function, writePassword().
   return finalPwd.join("");
 }
