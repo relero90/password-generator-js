@@ -22,4 +22,4 @@ This is a web application designed to generate strong, randomized passwords base
 
 ## Deployed Application Link
 
-https://relero90.github.io/password-generator-js/
+(coming soon!)
