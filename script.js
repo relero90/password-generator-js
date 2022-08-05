@@ -90,9 +90,11 @@ var specChar = [
 
 // Write password to the #password input
 function writePassword() {
+  // Variable password will equal the result of generatePassword() function
   var password = generatePassword();
+  // Variable passwordText will equal the HTML element with "id = password"
   var passwordText = document.querySelector("#password");
-
+  // The value of var passwordText should equal var password
   passwordText.value = password;
 }
 
