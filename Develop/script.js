@@ -96,14 +96,16 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Add event listener to generateBtn
 generateBtn.addEventListener("click", writePassword);
 
-// Declares a function, generatePassword.
+// Declare a function, generatePassword.
 function generatePassword() {
   // Prompt user to declare the value of desLength.
   var desLength = prompt(
-    "How many characters long should your password be? (8-128 accepted)"
+    "How many characters long should your password be?" +
+      "\n" +
+      "(8-128 accepted)"
   );
 
   // If desLength is outside of 8-128 character range, prompt user and return to beginning of generatePassword() function.
@@ -112,22 +114,22 @@ function generatePassword() {
     generatePassword();
   }
 
-  // Declares local boolean variables for the use of each type of character and asks the user to confirm true or false.
+  // Ask the user to declare the value of local boolean variables for the use of each type of character.
   var ucUse = confirm("Should your password contain uppercase letters?");
   var lcUse = confirm("Should your password contain lowercase letters?");
   var numUse = confirm("Should your password contain numbers?");
   var scUse = confirm("Should your password contain special characters?");
-  // If user selected false for all character types, prompt them to select at least one and recall the function.
+  // If user selected false for all character types, prompt them to select at least one and recall the function from the beginning.
   if (ucUse == false && lcUse == false && numUse == false && scUse == false) {
     alert("You must select at least one character type for your password.");
     generatePassword();
   }
 
-  // Sample array to contain one random value from each selected characterUse array.
+  // Declare sample array to contain one random value from each selected characterUse array.
   var charSample = [];
-  // Bank array to contain the bank of all possible characters to be used in password generation.
+  // Declare bank array to contain the bank of all possible characters to be used in password generation.
   var charBank = [];
-  // Final array to contain generated password for user.
+  // Declare final array to contain generated password for user.
   var finalPwd = [];
 
   // If user selected to use uppercase letters...
