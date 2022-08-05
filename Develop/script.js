@@ -108,7 +108,7 @@ function generatePassword() {
 
   // If desLength is outside of 8-128 character range, prompt user and return to beginning of generatePassword() function.
   if (desLength < 8 || desLength > 128) {
-    prompt("Your password must be between 8 and 128 characters long.");
+    alert("Your password must be between 8 and 128 characters long.");
     generatePassword();
   }
 
@@ -132,8 +132,8 @@ function generatePassword() {
 
   // If user selected to use uppercase letters...
   if (ucUse == true) {
-    // Select a random value from upperCase array and add it to charSample array
-    charSample.push(math.Floor(math.Random() * upperCase.length));
+    // Select one random value from upperCase array and add it to charSample array
+    charSample.push(upperCase[Math.floor(Math.random() * upperCase.length)]);
     console.log(charSample);
     // Copy entire upperCase array into charBank array
     charBank = charBank.concat(upperCase);
@@ -141,8 +141,8 @@ function generatePassword() {
 
   // If user selected to use lowercase letters...
   if (lcUse == true) {
-    // Select a random value from lowerCase array and add it to charSample array
-    charSample.push(math.Floor(math.Random() * lowerCase.length));
+    // Select one random value from lowerCase array and add it to charSample array
+    charSample.push(lowerCase[Math.floor(Math.random() * lowerCase.length)]);
     console.log(charSample);
     // Copy entire lowerCase array into charBank array
     charBank = charBank.concat(lowerCase);
@@ -150,8 +150,8 @@ function generatePassword() {
 
   // If user selected to use numbers...
   if (numUse == true) {
-    // Select a random value from number array and add it to charSample array
-    charSample.push(math.Floor(math.Random() * number.length));
+    // Select one random value from number array and add it to charSample array
+    charSample.push(number[Math.floor(Math.random() * number.length)]);
     console.log(charSample);
     // Copy entire number array into charBank array
     charBank = charBank.concat(number);
@@ -159,8 +159,8 @@ function generatePassword() {
 
   // If user selected to use special characters...
   if (scUse == true) {
-    // Select a random value from specChar array and add it to charSample array
-    charSample.push(math.Floor(math.Random() * specChar.length));
+    // Select one random value from specChar array and add it to charSample array
+    charSample.push(specChar[Math.floor(Math.random() * specChar.length)]);
     console.log(charSample);
     // Copy entire specChar array into charBank array
     charBank = charBank.concat(specChar);
@@ -169,7 +169,7 @@ function generatePassword() {
   // for loop
   for (i = 0; i < desLength; i++) {
     // math.Random() to generate array items for password?
-    finalPwd.push(charSample.push[math.Floor(math.Random() * desLength)]);
+    finalPwd.push(charSample[Math.floor(Math.random() * charSample.length)]);
     console.log("Password: " + finalPwd);
     // copy item to finalPwd array
   }
@@ -177,6 +177,7 @@ function generatePassword() {
   for (var j = 0; j < charSample.length; j++) {
     // Copy the item in index location j from charSample into finalPwd in index location j.
     finalPwd[j] = charSample[j];
+    console.log(finalPwd);
   }
 
   return finalPwd.join("");
