@@ -119,7 +119,7 @@ function generatePassword() {
   var scUse = confirm("Should your password contain special characters?");
   // If user selected false for all character types, prompt them to select at least one and recall the function.
   if (ucUse == false && lcUse == false && numUse == false && scUse == false) {
-    prompt("You must select at least one character type for your password.");
+    alert("You must select at least one character type for your password.");
     generatePassword();
   }
 
